@@ -6,12 +6,13 @@ export default function HomePage() {
     <div className="grid place-items-center gap-10">
       <section className="text-center py-20">
         <div className="relative w-screen -mx-[calc(50vw-50%)] h-[50vh] sm:h-[60vh]">
+          <div className="candle-flicker"></div>
           <Image
             src="/kristian-digital-ai-logo.png"
             alt="Kristian's Digital Studio Logo"
             fill
             sizes="100vw"
-            className="object-cover"
+            className="object-contain"
             priority
           />
         </div>

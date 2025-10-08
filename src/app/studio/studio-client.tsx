@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import NextImage from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type Size = "256x256" | "512x512" | "1024x1024" | "2048x2048";
@@ -18,12 +18,7 @@ type GalleryItem = {
 };
 
 const PROMPT_PRESETS: string[] = [
-  "A neon-lit cyberpunk alley, rain-soaked, cinematic lighting, ultra-detailed",
-  "Surreal floating islands above a pastel ocean, Studio Ghibli style",
-  "Art deco poster of a futuristic city skyline at dusk",
-  "Minimalist isometric room with plants and warm sunlight",
-  "Astronaut discovering bioluminescent forest on an alien planet",
-  "High-contrast black and white portrait, dramatic rim light, 35mm film",
+  "A photo of Kristian, a young man with blonde hair with dark brown roots, wearing a red shirt and blue jeans, standing in a room with a wall screens showing matrix like code, in a modern office environment",
 ];
 
 function generateId() {
@@ -399,7 +394,7 @@ export default function StudioClient() {
       {imageB64 && (
         <div className="mt-4">
           <div className="relative w-full max-w-2xl aspect-square rounded-md border border-black/10 dark:border-white/15 bg-black/5 dark:bg-white/5">
-            <Image
+            <NextImage
               alt="Generated"
               src={`data:image/png;base64,${imageB64}`}
               fill
@@ -460,7 +455,7 @@ export default function StudioClient() {
             {filteredGallery.map((item) => (
               <div key={item.id} className="rounded-md border border-black/10 dark:border-white/15 p-3 grid gap-2">
                 <div className="relative w-full aspect-square">
-                  <Image
+                  <NextImage
                     alt={item.prompt}
                     src={`data:image/png;base64,${item.b64}`}
                     fill
